@@ -1,0 +1,232 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  
+  background-image: url("back1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: fixed;
+  
+}
+
+header {
+  display: block;
+  padding: 4% 0rem 0rem 0;
+  font-size: 1.5rem;
+  color: #2c2b2b;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 21% 0 21%;
+  max-height: 100%;
+}
+
+
+
+form {
+  width: 100%;
+  min-height: 10%;
+  
+  padding: 0rem 0rem 1rem 0rem;
+}
+
+.textbox {
+  border-radius: 0.75rem;
+  margin: 0rem 0rem 1.5rem 0rem;
+  display: block;
+  border: 0.2rem solid #757575;
+  outline: none;
+  font-weight: bolder;
+  font-size: large;
+  min-width: 85%;
+  padding: 1rem 1rem 1rem 1rem;
+  line-height: 1.5rem;
+  -webkit-appearance: none;
+}
+
+.textbox:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.alias {
+  border-radius: 0.75rem;
+  margin: 0rem 0rem 1.5rem 0rem;
+  display: block;
+  border: 0.2rem solid #757575;
+  outline: none;
+  font-weight: bolder;
+  font-size: large;
+  min-width: 45%;
+  padding: 1rem 1rem 1rem 1rem;
+  line-height: 1.5rem;
+  -webkit-appearance: none;
+}
+
+.alias:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.badurl {
+  border: 0.2rem solid #f55;
+  box-shadow: 0 0 10px #f55;
+}
+
+.badalias {
+  border: 0.2rem solid #f55;
+  box-shadow: 0 0 10px #f55;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border: 0.225rem solid #2c2b2b;
+  border-radius: 2rem;
+  font-size: larger;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.shorturl {
+  display: flex;
+  flex-grow: 1;
+}
+
+.shorturlfield {
+  margin: 1rem 0rem 1rem 0rem;
+  padding: 0.7rem 0.7rem 0.5rem 0.7rem;
+  border: 0.22rem solid #4caf50;
+  border-radius: 1.5rem;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+  outline: none;
+  width: fit-content;
+}
+
+.copybutton {
+  margin: 1rem 0rem 1rem 1rem;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border: 0.2rem solid #000000;
+  border-radius: 2rem;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  outline: none;
+  width: fit-content;
+  position: relative;
+}
+
+
+
+.loading {
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 0;
+  color: #ffffff;
+  border: 4px solid #000000;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+  border-left: 3px solid rgba(255, 255, 255, 0);
+  background-color: transparent !important;
+  animation-name: rotateAnimation;
+  -webkit-animation-name: wk-rotateAnimation;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes wk-rotateAnimation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+#toast {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: black;
+  font-family: "Montserrat";
+  color: white;
+  padding: 16px;
+  border-bottom: 4px;
+  border-radius: 2rem;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+}
+#toast.show {
+  visibility: visible;
+  animation: fadeInOut 2.5s;
+}
+
+@keyframes fadeInOut {
+  5%,
+  95% {
+    opacity: 1;
+    bottom: 50px;
+  }
+  15%,
+  85% {
+    opacity: 1;
+    bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  input {
+    margin-right: 0;
+  }
+  .shorturl {
+    flex-direction: column;
+  }
+  .copybutton {
+    margin: 0;
+  }
+}
